@@ -8,7 +8,7 @@ const FriendList = ({ friends, isOnline }) => {
     <ul className={style.item}>
       {friends.map((item) => (
         <li className={style.itemList} key={item.id}>
-          <FriendStatus isOnline={isOnline}  />
+          <FriendStatus isOnline={item.isOnline}  />
           <img
             className={style.itemListAvatar}
             src={item.avatar}

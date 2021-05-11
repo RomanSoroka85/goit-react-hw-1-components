@@ -14,6 +14,9 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     
 }
+tr:nth-child(odd) {
+    background-color: red;
+}
 .tbody{
     /* display: block; */
     text-transform: uppercase;
