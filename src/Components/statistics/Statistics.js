@@ -1,18 +1,20 @@
 import React from "react";
-import style from '../statistics/Statistics.module.css'
+import style from "../statistics/Statistics.module.css";
 
-
-const Statistics = ({ statisticalData }) => {
+const Statistics = ({ stats }) => {
+  const [{ id }] = stats;
   return (
     <section className={style.statistics}>
       <h2 className={style.h2}>Upload stats</h2>
       <ul className={style.list}>
-        {statisticalData.map((item) => (
-          <li className={style.title}>
-            <span className={style.lebel}>{item.label}: </span>
-            <span className={style.percentage}>{item.percentage}%</span>
-          </li>
-        ))}
+        {stats.map(({ label, percentage }) => {
+          return (
+            <li className={style.title} key={[id]}>
+              <span className={style.lebel}>{[label]}: </span>
+              <span className={style.percentage}>{[percentage]}%</span>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

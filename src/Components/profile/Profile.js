@@ -1,29 +1,31 @@
 import React from "react";
-import s from '../profile/user.module.css'
+import s from '../profile/profile.module.css'
 
 const Profile = ({ user }) => {
+  const { avatar, name, tag, location } = user
+  const { followers, views, likes } = user.stats;
   return (
     <>
       <div className={s.profile}>
         <div className={s.description}>
-          <img src={user.avatar} alt="Аватар пользователя" className={s.avatar} />
-          <p className={s.name}>{user.name}</p>
-          <p className="tag">{user.tag}</p>
-          <p className="location">{user.location}</p>
+          <img src={avatar} alt="Аватар пользователя" className={s.avatar} />
+          <p className={s.name}>{name}</p>
+          <p className="tag">{tag}</p>
+          <p className="location">{location}</p>
         </div>
 
         <ul className={s.stats}>
           <li>
             <span className="label">Followers: </span>
-            <span className="quantity">{user.stats.followers}</span>
+            <span className="quantity">{followers}</span>
           </li>
           <li>
             <span className="label">Views: </span>
-            <span className="quantity">{user.stats.views}</span>
+            <span className="quantity">{views}</span>
           </li>
           <li>
             <span className="label">Likes: </span>
-            <span className="quantity">{user.stats.likes}</span>
+            <span className="quantity">{likes}</span>
           </li>
         </ul>
       </div>
