@@ -5,8 +5,9 @@ import TransactionHistory from "./transactionHistory/TransactionHistory";
 import Statistics from "./statistics/Statistics";
 import user from "./data/user.json";
 import statisticalData from "./data/statisticalData.json";
-import friends from "./data/friends.json";
 import transactions from "./data/transactions.json";
+import friends from "./data/friends.json";
+import  id from "./data/friends.json";
 
 
 
@@ -15,7 +16,7 @@ const App = () => {
     <>
       <Profile user={user} />
       <Statistics title="Upload stats" stats={statisticalData} />
-      <FriendList friends={friends} />
+      <FriendList friends={friends} key={id }/>
       <TransactionHistory transactions={transactions} />
     </>
   );
